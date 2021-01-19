@@ -1,6 +1,6 @@
 import React from "react";
 
-const ContactList = ({contacts}) => {
+const ContactList = ({contacts, onChange}) => {
   console.log(contacts)
   return (
     <>
@@ -12,6 +12,7 @@ const ContactList = ({contacts}) => {
             <li key={elem.id}>
               <h3>{elem.name}</h3>
               <p>{elem.number}</p>
+              <button type="button" onClick={() => onChange(elem.id)}>Delete</button>
             </li>
           )
         })}
